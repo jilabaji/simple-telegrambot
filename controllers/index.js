@@ -21,8 +21,10 @@ let sum = async (num1, num2) => {
 
 let send_welcome_note = async (body) => {
     try {
+        const { obj } = body;
+
         let replay = "Welcome to Telegram app"
-        return await telebot.notify_monkey( body.chat.id ,replay)    
+        return await telebot.notify_monkey( obj.chat.id ,replay)    
     } catch (error) {
         throw error;
     }    
