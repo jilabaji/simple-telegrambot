@@ -1,0 +1,31 @@
+@host = https://api.telegram.org/bot979560222:AAE9rAE5yBYuiFGebTbqa_Z80jhUI-u_wI4
+@accessToken = 
+###
+
+#GETME
+GET {{host}}/getMe
+
+###
+#@getUpdates
+GET {{host}}/getUpdates HTTP/1.1
+
+
+### Semd message to me private
+POST {{host}}/sendMessage  HTTP/1.1
+Content-Type: application/json
+
+{
+    "chat_id":"344803343",
+    "text":"check1"
+}
+
+
+### send the message with public MQ Group
+POST {{host}}/sendMessage  HTTP/1.1
+Content-Type: application/json
+
+{
+    "chat_id":"-356078540",
+    "text":"check1"
+}
+
