@@ -28,9 +28,8 @@ router.get('/checkapp', async function(req, res, next) {
   }
 });
 
-router.get("/start_bot", async function(req, res) {
+router.post("/start_bot", async function(req, res) {
   try {
-    debug('/start_bot init');
     let result = await index_ctrl.send_welcome_note(req.body);
     let send_data = {
       success: true,
@@ -39,7 +38,6 @@ router.get("/start_bot", async function(req, res) {
     };
     return res.json(send_data);
   } catch (error) {
-     debug('/start_bot exception');
      // Error Web Response
      let send_data = {
       success: false,
